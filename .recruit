@@ -1,0 +1,37 @@
+public class Recruitment {
+
+	public void checkAge(int age) throws InvalidAgeException
+	{
+		System.out.println("Recruitment Process Started...");
+		System.out.println("Age Scrutiny in Progress...");
+		if(age > 25)
+		{
+			/*InvalidAgeException iae = new InvalidAgeException("Sorry Valid Age is lessthan or equal to 25");
+			throw iae;*/
+			throw new InvalidAgeException("Sorry Valid Age is lessthan or equal to 25");
+		}
+		System.out.println("Age Scrutiny COmpleted... with Age "+age);
+		System.out.println("Recruitment Process to continue...");
+		System.out.println("--------------");
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Recruitment rc = new Recruitment();
+		try
+		{
+			rc.checkAge(23);
+			rc.checkAge(22);
+			rc.checkAge(27);
+			rc.checkAge(21);
+			rc.checkAge(20);
+		}
+		catch(InvalidAgeException iae)
+		{
+			System.out.println("Age Error Msg : "+iae.message);
+		}
+		
+
+	}
+
+}
+
